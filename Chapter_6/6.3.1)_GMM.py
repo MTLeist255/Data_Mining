@@ -221,5 +221,5 @@ ax.imshow(np.exp(log_dens.T), origin='lower', cmap=plt.cm.binary,
 ax.set_xlabel(r'$y\ {\rm (Mpc)}$')
 ax.set_ylabel(r'$x\ {\rm (Mpc)}$')
 # Un-comment to display plot
-#plt.show()
+plt.show()
 

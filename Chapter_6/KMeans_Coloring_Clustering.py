@@ -1,10 +1,9 @@
 # Authors: Robert Layton <robertlayton@gmail.com>
 #          Olivier Grisel <olivier.grisel@ensta.org>
 #          Mathieu Blondel <mathieu@mblondel.org>
-#
+# Edited by: Mason Leist
 # License: BSD 3 clause
 
-print(__doc__)
 import numpy as np
 import matplotlib.pyplot as plt
 from sklearn.cluster import KMeans
