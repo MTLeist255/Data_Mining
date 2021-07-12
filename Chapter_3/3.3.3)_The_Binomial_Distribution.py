@@ -1,22 +1,23 @@
-# FIGURE 3.9)
-#
-# This shows an example of a binomial distribution with various parameters. We’ll generate the distribution using:
-#
-# dist = scipy.stats.binom(...)
-#
-# Where … should be filled in with the desired distribution parameters Once we have defined
-# the distribution parameters in this way, these distribution objects have many useful methods; for example:
-#
-# dist.pmf(x) computes the PROBABILITY MASS FUNCTION at values x in the case of discrete distributions
-#
-# dist.pdf(x) computes the PROBABILITY DENSITY FUNCTION at values x in the case of continuous distributions
-#
-# dist.rvs(N) computes N-RANDOM VARIABLES distributed according to the given distribution
-#
-# Many further options exist; refer to the documentation of scipy.stats for more details.
-
+"""
+Example of a Binomial distribution
+----------------------------------
+Figure 3.9.
+This shows an example of a binomial distribution with various parameters.
+We'll generate the distribution using::
+    dist = scipy.stats.binom(...)
+Where ... should be filled in with the desired distribution parameters
+Once we have defined the distribution parameters in this way, these
+distribution objects have many useful methods; for example:
+* ``dist.pmf(x)`` computes the Probability Mass Function at values ``x``
+  in the case of discrete distributions
+* ``dist.pdf(x)`` computes the Probability Density Function at values ``x``
+  in the case of continuous distributions
+* ``dist.rvs(N)`` computes ``N`` random variables distributed according
+  to the given distribution
+Many further options exist; refer to the documentation of ``scipy.stats``
+for more details.
+"""
 # Author: Jake VanderPlas
-# Edited by: Mason Leist
 # License: BSD
 #   The figure produced by this code is published in the textbook
 #   "Statistics, Data Mining, and Machine Learning in Astronomy" (2013)
@@ -51,7 +52,7 @@ for (n, b, ls) in zip(n_values, b_values, linestyles):
     # create a binomial distribution
     dist = binom(n, b)
 
-    plt.plot(x, dist.pmf(x), color='black', linestyle='-' + ls, drawstyle = 'steps-mid',
+    plt.plot(x, dist.pmf(x), color='black', linestyle=ls, drawstyle='steps-mid',
              label=r'$b=%.1f,\ n=%i$' % (b, n))
 
 plt.xlim(-0.5, 35)
@@ -59,7 +60,7 @@ plt.ylim(0, 0.25)
 
 plt.xlabel('$x$')
 plt.ylabel(r'$p(x|b, n)$')
-plt.title('Figure 3.9) Binomial Distribution')
+plt.title('Binomial Distribution')
 
 plt.legend()
 plt.show()

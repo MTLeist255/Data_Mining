@@ -38,9 +38,9 @@ def gonzalez(data, cluster_num, technique = 'max'):
     return (clusters)
 
 # COMMENT THIS -> Explain coding in order (max-dist undefined up until here)
-cluster_points = gonzalez(X, 3)
-A = np.array(cluster_points)
-print('test', A)
+# cluster_points = gonzalez(X, 3)
+# A = np.array(cluster_points)
+# print('test', A)
 
 def max_dist(data, clusters):
     distances = np.zeros(len(data)) # we will keep a cumulative distance measure for all points

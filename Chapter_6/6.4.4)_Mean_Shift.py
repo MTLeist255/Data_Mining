@@ -65,7 +65,7 @@ X_scaled = preprocessing.scale(X)
 # estimate_bandwidth()-> estimates the bandwidth to use w/ the Mean-Shift algorithm. That this function
 # takes time at least quadratic in n-samples, for large datasets it's wise to set a parameter to a
 # small value.
-#bandwidth = estimate_bandwidth(X)
+bandwidth = estimate_bandwidth(X)
 # user inputed bandwidth: t~14s
 bandwidth = 0.4
 

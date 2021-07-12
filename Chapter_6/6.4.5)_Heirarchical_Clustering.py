@@ -3,9 +3,11 @@
 # EUCLIDEAN MINIMUM SPANNING TREE: An approximate Euclidean minimum spanning tree over the two-dimensional projection
 # of the SDSS Great Wall. The upper panel shows the input points, and the middle panel shows the dendrogram connecting
 # them. The lower panel shows clustering based on this dendrogram, created by removing the largest 10% of the graph
-# edges, and keeping the remaining connected clusters with 30 or more members. This figure is based on the data
+# edges, and keeping the remaining connected clusters with 30 or more members.
+# This figure is based on the data
 # presented in Figure 1 of Cowan & Ivezic (2008). A similar figure appears in the book “Statistics, Data Mining, and
-# Machine Learning in Astronomy”, by Ivezic, Connolly, Vanderplas, and Gray (2013). The three panels of this figure
+# Machine Learning in Astronomy”, by Ivezic, Connolly, Vanderplas, and Gray (2013).
+# The three panels of this figure
 # show a hierarchical clustering of a subset of galaxies from the Sloan Digital Sky Survey (SDSS). This region is known
 # as the “SDSS Great Wall”, and contains an extended cluster of several thousand galaxies approximately 300Mpc (about
 # 1 billion light years) from earth. The TOP panel shows the positions of over 8,000 galaxies projected to a 2D plane
@@ -57,9 +59,9 @@ xmin, xmax = (-375, -175)
 ymin, ymax = (-300, 200)
 
 #------------------------------------------------------------
-# Compute the MST clustering model
-n_neighbors = 100
-# Increase/Decrease Mpc scale
+# Compute the MST clustering model-> LAST PANEL
+n_neighbors = 10
+# Increase/Decrease Mpc scale-> range [+0.1 -> 1.0]
 edge_cutoff = 0.9
 # Increase/reduce cluster size
 cluster_cutoff = 10
@@ -74,11 +76,11 @@ n_components = model.n_components_
 labels = model.labels_
 
 #------------------------------------------------------------
-# Get the x, y coordinates of the beginning and end of each line segment
+# Get the x, y coordinates of the beginning and end of each line segment-> MIDDLE PANEL
 T_x, T_y = get_graph_segments(model.X_train_,
                               model.full_tree_)
 T_trunc_x, T_trunc_y = get_graph_segments(model.X_train_,
-                                          model.cluster_graph_)
+                                          model.cluster_graph_) # -> BOTTOM PANEL
 
 #------------------------------------------------------------
 # Fit a GaussianMixture to each individual cluster
